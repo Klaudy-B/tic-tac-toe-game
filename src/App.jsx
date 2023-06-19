@@ -25,8 +25,6 @@ function App() {
           ===0
         ){
           setWin({value: true, player: playerNumber});
-          console.log((player.points[j][0]-lastPoint[0])*(player.points[k][1]-lastPoint[1])
-          -(player.points[j][1]-lastPoint[1])*(player.points[k][0]-lastPoint[0]))
           break;
         }
       }

@@ -35,3 +35,19 @@ main{
   color: gold;
   filter: drop-shadow(1rem 1rem 1rem gold);
 }
+@media screen and (max-width: 749px) {
+  .wrapper{
+    width: 55vw;
+    height: 55vw;
+  }
+}
+@media screen and (max-width: 320px) {
+  .wrapper>div{
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 162px) {
+  .wrapper>div{
+    font-size: 1rem;
+  }
+}
