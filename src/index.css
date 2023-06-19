@@ -7,3 +7,22 @@ body{
   padding: 0px;
   box-sizing: border-box;
 }
+div.app-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+button{
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: blueviolet;
+  color: white;
+}
+button:hover{
+  background-color: #AA55AA;
+}
+button:active{
+  background-color: #AAAAAA;
+}
