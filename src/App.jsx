@@ -32,27 +32,25 @@ function App() {
   }
   
   const Listener = (event, player)=>{
-    if(win.value){
-      return;
-    }
-    if(event.target.className==='blank'){
-      event.target.className = players[`${player}`].jsxclass;
-      event.target.innerText = players[`${player}`].letter;
-      let newPlayers = {};
-      newPlayers[`${player}`] = {
-        turn: players[`${player}`].turn+1,
-        points: [...players[`${player}`].points, coordinates[event.target.id]],
-        letter: players[`${player}`].letter,
-        jsxclass: players[`${player}`].jsxclass
+    if(!win.value&&!(players[1].turn+players[2].turn===9)&&event.target.className==='blank'){
+        event.target.className = players[`${player}`].jsxclass;
+        event.target.innerText = players[`${player}`].letter;
+        let newPlayers = {};
+        newPlayers[`${player}`] = {
+          turn: players[`${player}`].turn+1,
+          points: [...players[`${player}`].points, coordinates[event.target.id]],
+          letter: players[`${player}`].letter,
+          jsxclass: players[`${player}`].jsxclass
+        }
+        newPlayers[`${-player+3}`] = {...players[`${-player+3}`]}
+        setPlayers(newPlayers);
+        setPlayer(-player+3);
+
+        if(players[`${player}`].turn>=2){
+          checkForAWin(players[`${player}`], player, coordinates[event.target.id]);
+        }
       }
-      newPlayers[`${-player+3}`] = {...players[`${-player+3}`]}
-      setPlayers(newPlayers);
-      setPlayer(-player+3);
     }
-    if(players[`${player}`].turn>=2){
-      checkForAWin(players[`${player}`], player, coordinates[event.target.id]);
-    }
-  }
   return (
     <>
     {!(players[1].turn+players[2].turn===9)&&!win.value&&<header>Player <span className={players[`${player}`].jsxclass}>{player}</span>'s turn</header>}
