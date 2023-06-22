@@ -7,5 +7,5 @@ export default defineConfig({
   build: {
     outDir: 'docs'
   },
-  base: 'https://klaudy-b.github.io/tic-tac-toe-game/',
+  base: '/tic-tac-toe-game/',
 })
